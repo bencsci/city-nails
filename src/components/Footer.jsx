@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <div>
-      <div className="md:p-20 sm:p-5 grid md:grid-cols-2 uppercase sm:grid-cols-1">
+      <div className="md:p-20 sm:p-5 grid md:grid-cols-2 uppercase sm:grid-cols-1 p-7">
         <div>
           <ul>
             <li className="flex gap-5 p-1">

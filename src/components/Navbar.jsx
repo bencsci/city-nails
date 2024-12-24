@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { NavLink, Link } from "react-router";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -7,20 +8,63 @@ const Navbar = () => {
   const handleNav = () => {
     setNav(!nav);
   };
+
   return (
     <div className="flex justify-between items-center h-20 max-w-[1640px] mx-auto px-4 text-black">
-      <h1 className="w-full text-3xl font-bold text-[#8A192C]">CITY NAILS</h1>
+      <h1 className="w-full text-3xl font-bold text-[#8A192C]">
+        <Link to="/">CITY NAILS</Link>
+      </h1>
+
+      {/* Desktop Menu */}
       <ul className="hidden md:flex">
-        <li className="p-4 font-semibold hover:text-[#8A192C] hover:border-b-2 hover:border-[#8A192C]">
-          Home
+        <li className="p-4 font-semibold hover:text-[#8A192C]">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? "text-[#8A192C] border-b-2 border-[#8A192C]" : ""
+            }
+          >
+            Home
+          </NavLink>
         </li>
-        <li className="p-4 font-semibold hover:text-[#8A192C]">Services</li>
-        <li className="p-4 font-semibold hover:text-[#8A192C]">About</li>
-        <li className="p-4 font-semibold hover:text-[#8A192C]">Contact</li>
+        <li className="p-4 font-semibold hover:text-[#8A192C]">
+          <NavLink
+            to="/services"
+            className={({ isActive }) =>
+              isActive ? "text-[#8A192C] border-b-2 border-[#8A192C]" : ""
+            }
+          >
+            Services
+          </NavLink>
+        </li>
+        <li className="p-4 font-semibold hover:text-[#8A192C]">
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              isActive ? "text-[#8A192C] border-b-2 border-[#8A192C]" : ""
+            }
+          >
+            About
+          </NavLink>
+        </li>
+        <li className="p-4 font-semibold hover:text-[#8A192C]">
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              isActive ? "text-[#8A192C] border-b-2 border-[#8A192C]" : ""
+            }
+          >
+            Contact
+          </NavLink>
+        </li>
       </ul>
-      <div onClick={handleNav} className={nav ? "block" : "block md:hidden"}>
+
+      {/* Mobile Menu Button */}
+      <div onClick={handleNav} className="block md:hidden">
         {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
       </div>
+
+      {/* Mobile Menu */}
       <div
         className={
           nav
@@ -33,16 +77,40 @@ const Navbar = () => {
         </h1>
         <ul className="p-4 uppercase">
           <li className="p-4 border-b border-x-gray-800 font-semibold hover:text-[#8A192C]">
-            Home
+            <NavLink
+              to="/"
+              onClick={handleNav}
+              className={({ isActive }) => (isActive ? "text-[#8A192C]" : "")}
+            >
+              Home
+            </NavLink>
           </li>
           <li className="p-4 border-b border-x-gray-800 font-semibold hover:text-[#8A192C]">
-            Services
+            <NavLink
+              to="/services"
+              onClick={handleNav}
+              className={({ isActive }) => (isActive ? "text-[#8A192C]" : "")}
+            >
+              Services
+            </NavLink>
           </li>
           <li className="p-4 border-b border-x-gray-800 font-semibold hover:text-[#8A192C]">
-            About
+            <NavLink
+              to="/about"
+              onClick={handleNav}
+              className={({ isActive }) => (isActive ? "text-[#8A192C]" : "")}
+            >
+              About
+            </NavLink>
           </li>
           <li className="p-4 border-b border-x-gray-800 font-semibold hover:text-[#8A192C]">
-            Contact
+            <NavLink
+              to="/contact"
+              onClick={handleNav}
+              className={({ isActive }) => (isActive ? "text-[#8A192C]" : "")}
+            >
+              Contact
+            </NavLink>
           </li>
         </ul>
       </div>
