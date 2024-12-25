@@ -24,7 +24,7 @@ const AboutSalon = () => {
           </p>
         </div>
         <div className="px-24 md:px-8 md:pt-14 lg:pt-0 hidden md:block">
-          <img src={about1} className="" />
+          <img src={about1} />
         </div>
       </div>
     </section>
