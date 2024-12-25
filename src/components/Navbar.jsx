@@ -49,12 +49,12 @@ const Navbar = () => {
         </li>
         <li className="p-4 font-semibold hover:text-[#8A192C]">
           <NavLink
-            to="/contact"
+            to="/book"
             className={({ isActive }) =>
               isActive ? "text-[#8A192C] border-b-2 border-[#8A192C]" : ""
             }
           >
-            Contact
+            Book
           </NavLink>
         </li>
       </ul>
@@ -105,11 +105,11 @@ const Navbar = () => {
           </li>
           <li className="p-4 border-b border-x-gray-800 font-semibold hover:text-[#8A192C]">
             <NavLink
-              to="/contact"
+              to="/book"
               onClick={handleNav}
               className={({ isActive }) => (isActive ? "text-[#8A192C]" : "")}
             >
-              Contact
+              Book
             </NavLink>
           </li>
         </ul>

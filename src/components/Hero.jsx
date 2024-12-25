@@ -1,5 +1,10 @@
 import React from "react";
 import Front from "../assets/home_image.jpg";
+import { Link } from "react-router";
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 
 const Hero = () => {
   return (
@@ -16,9 +21,14 @@ const Hero = () => {
             Polish Your Look, <br />
             Perfect Your Nails.
           </p>
-          <button className="bg-[#8A192C] text-white w-[200px] rounded-md font-medium my-6 py-3">
-            Book Now
-          </button>
+          <Link to="/book">
+            <button
+              onClick={scrollToTop}
+              className="border-2 border-[#8A192C] text-[#8A192C] font-bold py-2 px-6 hover:bg-[#8A192C] hover:text-white hover:shadow-md transition duration-300"
+            >
+              Book an Appointment
+            </button>
+          </Link>
         </div>
       </div>
     </div>

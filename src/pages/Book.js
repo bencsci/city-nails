@@ -1,9 +1,9 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import Main from "../components/ContactMain";
+import Main from "../components/BookMain";
 
-function Contact() {
+function Book() {
   return (
     <div>
       <Navbar />
@@ -13,4 +13,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default Book;

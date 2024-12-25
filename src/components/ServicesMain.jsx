@@ -1,5 +1,10 @@
 import React from "react";
 import Banner from "../assets/servicesBanner.jpg";
+import { Link } from "react-router";
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 
 const services = [
   {
@@ -92,7 +97,7 @@ const ServicesMain = () => {
       <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-[#8A192C] mb-8">
         ✨ Our Services ✨
       </h1>
-      <img src={Banner} className="mt-10" />
+      <img src={Banner} className="mt-10 w-full rounded-lg shadow-lg" />
       <div className="border-t-2 border-[#8A192C] my-4"></div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         {services.map((service, index) => (
@@ -110,6 +115,25 @@ const ServicesMain = () => {
             <p className="text-sm text-gray-600 mt-2">{service.description}</p>
           </div>
         ))}
+      </div>
+
+      {/* Book an Appointment Section */}
+      <div className="mt-12 text-center">
+        <h2 className="text-2xl md:text-3xl font-bold text-[#8A192C] mb-4">
+          Ready to pamper yourself?
+        </h2>
+        <p className="text-lg text-gray-700 mb-6">
+          Schedule an appointment with us today and enjoy a relaxing nail care
+          experience.
+        </p>
+        <Link to="/book">
+          <button
+            onClick={scrollToTop}
+            className="border-2 border-[#8A192C] text-[#8A192C] font-bold py-2 px-6 border-double hover:bg-[#8A192C] hover:text-white transition duration-300"
+          >
+            Book an Appointment
+          </button>
+        </Link>
       </div>
     </div>
   );

@@ -26,6 +26,7 @@ const OurHistory = () => {
         <div>
           <img
             src={about3}
+            loading="eager"
             className="px-24 md:px-8 md:pt-16 lg:pt-0 hidden md:block"
           />
         </div>

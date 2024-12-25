@@ -29,13 +29,13 @@ const responsive = {
 };
 
 const CarouselComponent = ({ deviceType }) => (
-  <div className="bg-[#EFCFE3]">
-    <p className="text-center p-[5rem] font-bold font-serif text-4xl">
-      Crafted with perfection.
+  <div className="bg-[#F8F8F8] py-10">
+    <p className="text-center font-bold font-serif text-4xl text-[#333] mb-10">
+      Crafted with Perfection
     </p>
     <div className="pb-10">
       <Carousel
-        className="lg:mx-[10rem] md:mx-[1rem] sm:mx-auto"
+        className="mx-auto"
         swipeable={false}
         draggable={false}
         showDots={true}
@@ -50,44 +50,50 @@ const CarouselComponent = ({ deviceType }) => (
         removeArrowOnDeviceType={["tablet", "mobile"]}
         deviceType={deviceType}
       >
-        <div className="size-80 sm:size-[300px] lg:size-96 mx-auto">
+        {/* Image Slide 1 */}
+        <div className="p-5 md:p-0 w-full sm:w-[300px] lg:w-[400px] mx-auto">
           <img
-            className="w-full h-full object-cover border-white border-[20px]"
+            className="w-full h-full object-cover rounded-lg shadow-lg border-4 border-white"
             src={Nails1}
             alt="Nails1"
           />
         </div>
-        <div className="size-80 sm:size-[300px] lg:size-96 mx-auto">
+        {/* Image Slide 2 */}
+        <div className="p-5 md:p-0 w-full sm:w-[300px] lg:w-[400px] mx-auto">
           <img
-            className="w-full h-full object-cover border-white border-[20px]"
+            className="w-full h-full object-cover rounded-lg shadow-lg border-4 border-white"
             src={Nails2}
             alt="Nails2"
           />
         </div>
-        <div className="size-80 sm:size-[300px] lg:size-96 mx-auto">
+        {/* Image Slide 3 */}
+        <div className="p-5 md:p-0 w-full sm:w-[300px] lg:w-[400px] mx-auto">
           <img
-            className="w-full h-full object-cover border-white border-[20px]"
+            className="w-full h-full object-cover rounded-lg shadow-lg border-4 border-white"
             src={Nails3}
             alt="Nails3"
           />
         </div>
-        <div className="size-80 sm:size-[300px] lg:size-96 mx-auto">
+        {/* Image Slide 4 */}
+        <div className="p-5 md:p-0 w-full sm:w-[300px] lg:w-[400px] mx-auto">
           <img
-            className="w-full h-full object-cover border-white border-[20px]"
+            className="w-full h-full object-cover rounded-lg shadow-lg border-4 border-white"
             src={Nails4}
             alt="Nails4"
           />
         </div>
-        <div className="size-80 sm:size-[300px] lg:size-96 mx-auto">
+        {/* Image Slide 5 */}
+        <div className="p-5 md:p-0 w-full sm:w-[300px] lg:w-[400px] mx-auto">
           <img
-            className="w-full h-full object-cover border-white border-[20px]"
+            className="w-full h-full object-cover rounded-lg shadow-lg border-4 border-white"
             src={Nails5}
             alt="Nails5"
           />
         </div>
-        <div className="size-80 sm:size-[300px] lg:size-96 mx-auto">
+        {/* Image Slide 6 */}
+        <div className="p-5 md:p-0 w-full sm:w-[300px] lg:w-[400px] mx-auto">
           <img
-            className="w-full h-full object-cover border-white border-[20px]"
+            className="w-full h-full object-cover rounded-lg shadow-lg border-4 border-white"
             src={Nails6}
             alt="Nails6"
           />

@@ -1,5 +1,10 @@
 import React from "react";
 import about2 from "../../assets/about2.jpg";
+import { Link } from "react-router";
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 
 const WhatWeOffer = () => {
   return (
@@ -8,6 +13,7 @@ const WhatWeOffer = () => {
         <div>
           <img
             src={about2}
+            loading="eager"
             className="px-24 md:px-8 md:pt-14 lg:pt-0 hidden md:block"
           />
         </div>
@@ -28,9 +34,14 @@ const WhatWeOffer = () => {
             <span className="animate-bounce inline-block">👇</span>
           </p>
           <div className="flex justify-center">
-            <button className="px-6 py-3 bg-gray-200 text-gray-800 font-semibold rounded shadow-[4px_4px_0_0_rgb(156,163,175)] hover:shadow-[2px_2px_0_0_rgb(156,163,175)] hover:translate-x-1 hover:translate-y-1 transition-transform">
-              Services
-            </button>
+            <Link to="/services">
+              <button
+                onClick={scrollToTop}
+                className="border-2 border-[#808080] text-[#808080] font-bold py-2 px-6 hover:bg-[#808080] hover:text-white hover:shadow-md transition duration-300"
+              >
+                See Services
+              </button>
+            </Link>
           </div>
         </div>
       </div>
