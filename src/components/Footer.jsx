@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router";
+import { motion } from "motion/react";
 
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -8,8 +9,29 @@ const scrollToTop = () => {
 const Footer = () => {
   return (
     <footer className="p-5 md:p-10">
-      <div className="md:grid md:grid-cols-2 md:pl-36">
-        <div>
+      <motion.div
+        className="md:grid md:grid-cols-2 md:pl-36"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{
+          duration: 0.5, // Faster animation for entire column
+          ease: "easeInOut",
+        }}
+        viewport={{ once: true }} // Ensures animation happens once
+      >
+        {/* Contact Us Column */}
+        <motion.div
+          className="md:pl-0"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 1,
+            ease: "easeInOut",
+            bounce: 0.5,
+            stiffness: 50,
+          }}
+          viewport={{ once: true }} // Ensures animation happens once
+        >
           <h3 className="text-lg font-bold mb-4 uppercase">Contact Us</h3>
           <ul>
             <li className="flex gap-5 p-1">
@@ -28,7 +50,7 @@ const Footer = () => {
                 href="mailto:CityNails@gmail.com"
                 className="hover:text-[#8A192C]"
               >
-                CityNails@gmail.com
+                contact.citynails@gmail.com
               </a>
             </li>
             <li className="flex gap-5 p-1">
@@ -36,9 +58,20 @@ const Footer = () => {
               <span>272 Commercial Street</span>
             </li>
           </ul>
-        </div>
+        </motion.div>
 
-        <div className="mt-5 md:mt-0 md:pl-32">
+        {/* Quick Links Column */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 1,
+            ease: "easeInOut",
+            bounce: 0.5,
+            stiffness: 50,
+          }}
+          viewport={{ once: true }} // Ensures animation happens once
+        >
           <h3 className="text-lg font-bold mb-4 uppercase">Quick Links</h3>
           <ul className="font-bold">
             <li className="p-1 hover:text-[#8A192C] cursor-pointer">
@@ -62,15 +95,26 @@ const Footer = () => {
               </NavLink>
             </li>
           </ul>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       {/* Footer Bottom */}
-      <div className="mt-10 text-center border-t border-gray-300 pt-5">
+      <motion.div
+        className="mt-10 text-center border-t border-gray-300 pt-5"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 1,
+          ease: "easeInOut",
+          bounce: 0.5,
+          stiffness: 50,
+        }}
+        viewport={{ once: true }} // Ensures animation happens once
+      >
         <p className="text-sm text-gray-600">
           &copy; {new Date().getFullYear()} City Nails
         </p>
-      </div>
+      </motion.div>
     </footer>
   );
 };

@@ -9,6 +9,7 @@ import Nails3 from "../assets/nails4.jpeg";
 import Nails4 from "../assets/nails8.jpeg";
 import Nails5 from "../assets/nails7.jpeg";
 import Nails6 from "../assets/nails3.jpeg";
+import { motion } from "motion/react";
 
 const responsive = {
   desktop: {
@@ -30,9 +31,20 @@ const responsive = {
 
 const CarouselComponent = ({ deviceType }) => (
   <div className="bg-[#F8F8F8] py-10">
-    <p className="text-center font-bold font-serif text-4xl text-[#333] mb-10">
+    <motion.p
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 1.5,
+        ease: "easeInOut",
+        bounce: 0.5,
+        stiffness: 50,
+      }}
+      viewport={{ once: true }}
+      className="text-center font-bold font-serif text-4xl text-[#333] mb-10"
+    >
       Crafted with Perfection
-    </p>
+    </motion.p>
     <div className="pb-10">
       <Carousel
         className="mx-auto"

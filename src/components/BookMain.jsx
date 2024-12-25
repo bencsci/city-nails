@@ -5,6 +5,7 @@ import {
   AdvancedMarker,
   Pin,
 } from "@vis.gl/react-google-maps";
+import { motion } from "motion/react";
 
 const API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 const MAP_ID = process.env.REACT_APP_MAP_ID;
@@ -16,10 +17,29 @@ const ContactMain = () => {
         {/* Left side - Contact info */}
         <div className="md:order-1">
           <div>
-            <h1 className="font-bold text-3xl mt-4 text-center lg:text-left xl:text-5xl text-[#8A192C] lg:text-3xl">
+            <motion.h1
+              className="font-bold text-3xl mt-4 text-center lg:text-left xl:text-5xl text-[#8A192C] lg:text-3xl"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 1, // Faster duration
+                ease: "easeInOut", // Bouncy effect with easeInOut
+                bounce: 0.5, // Adds more bounce
+                stiffness: 50, // Controls the bounce intensity
+              }}
+            >
               Book Now <span className="animate-bounce inline-block">📩</span>
-            </h1>
-            <div className="m-4 text-lg lg:my-8 lg:text-lg text-gray-700 md:text-base xl:text-xl">
+            </motion.h1>
+            <motion.div
+              className="m-4 text-lg lg:my-8 lg:text-lg text-gray-700 md:text-base xl:text-xl"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                duration: 1, // Faster duration
+                ease: "easeInOut", // Bouncy effect with easeInOut
+                delay: 0.5,
+              }}
+            >
               <p className="mb-4">
                 You can walk in for services without an appointment, or schedule
                 an appointment in person or by calling us. We're always ready to
@@ -36,7 +56,7 @@ const ContactMain = () => {
                 </p>
                 <p>
                   <span className="font-semibold">✉️ Email:</span>{" "}
-                  info@citynails.com
+                  contact.citynails@gmail.com
                 </p>
               </div>
 
@@ -59,7 +79,7 @@ const ContactMain = () => {
                   Please note: We only accept cash, no debit or credit cards. 💵
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
 

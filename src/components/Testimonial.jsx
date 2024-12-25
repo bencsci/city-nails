@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "motion/react";
 
 const Testimonial = () => {
   const testimonials = [
@@ -25,18 +26,44 @@ const Testimonial = () => {
         What Our Clients Say 💬
       </h2>
       <div className="lg:grid lg:grid-cols-3 gap-8">
-        {testimonials.map((testimonial) => (
-          <div
+        {testimonials.map((testimonial, index) => (
+          <motion.div
             key={testimonial.id}
             className="bg-white p-6 shadow-lg rounded-lg text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 1,
+              delay: index * 0.2, // Delay each card slightly for sequential animation
+              ease: "easeInOut",
+            }}
           >
-            <p className="text-lg text-gray-700 italic mb-4">
+            {/* Card content (text) */}
+            <motion.p
+              className="text-lg text-gray-700 italic mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.3, // Text fades in after the card with some delay
+                ease: "easeInOut",
+              }}
+            >
               "{testimonial.text}"
-            </p>
-            <h3 className="text-md font-semibold text-[#8A192C]">
+            </motion.p>
+            <motion.h3
+              className="text-md font-semibold text-[#8A192C]"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 1,
+                delay: 0.5, // Name fades in after the text
+                ease: "easeInOut",
+              }}
+            >
               - {testimonial.name}
-            </h3>
-          </div>
+            </motion.h3>
+          </motion.div>
         ))}
       </div>
     </section>

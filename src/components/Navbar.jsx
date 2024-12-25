@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { NavLink, Link } from "react-router";
+import { motion } from "motion/react";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -11,13 +12,34 @@ const Navbar = () => {
 
   return (
     <div className="flex justify-between items-center h-20 max-w-[1640px] mx-auto px-4 text-black">
-      <h1 className="w-full text-3xl font-bold text-[#8A192C]">
+      {/* Motion component for desktop navbar text */}
+      <motion.h1
+        className="w-full text-3xl font-bold text-[#8A192C]"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 1, // Faster duration
+          ease: "easeInOut", // Bouncy effect with easeInOut
+          bounce: 0.5, // Adds more bounce
+          stiffness: 50, // Controls the bounce intensity
+        }}
+      >
         <Link to="/">CITY NAILS</Link>
-      </h1>
+      </motion.h1>
 
       {/* Desktop Menu */}
       <ul className="hidden md:flex">
-        <li className="p-4 font-semibold hover:text-[#8A192C]">
+        <motion.li
+          className="p-4 font-semibold hover:text-[#8A192C]"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 1,
+            ease: "easeInOut",
+            bounce: 0.5,
+            stiffness: 50,
+          }}
+        >
           <NavLink
             to="/"
             className={({ isActive }) =>
@@ -26,8 +48,19 @@ const Navbar = () => {
           >
             Home
           </NavLink>
-        </li>
-        <li className="p-4 font-semibold hover:text-[#8A192C]">
+        </motion.li>
+
+        <motion.li
+          className="p-4 font-semibold hover:text-[#8A192C]"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 1,
+            ease: "easeInOut",
+            bounce: 0.5,
+            stiffness: 50,
+          }}
+        >
           <NavLink
             to="/services"
             className={({ isActive }) =>
@@ -36,8 +69,19 @@ const Navbar = () => {
           >
             Services
           </NavLink>
-        </li>
-        <li className="p-4 font-semibold hover:text-[#8A192C]">
+        </motion.li>
+
+        <motion.li
+          className="p-4 font-semibold hover:text-[#8A192C]"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 1,
+            ease: "easeInOut",
+            bounce: 0.5,
+            stiffness: 50,
+          }}
+        >
           <NavLink
             to="/about"
             className={({ isActive }) =>
@@ -46,8 +90,19 @@ const Navbar = () => {
           >
             About
           </NavLink>
-        </li>
-        <li className="p-4 font-semibold hover:text-[#8A192C]">
+        </motion.li>
+
+        <motion.li
+          className="p-4 font-semibold hover:text-[#8A192C]"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 1,
+            ease: "easeInOut",
+            bounce: 0.5,
+            stiffness: 50,
+          }}
+        >
           <NavLink
             to="/book"
             className={({ isActive }) =>
@@ -56,7 +111,7 @@ const Navbar = () => {
           >
             Book
           </NavLink>
-        </li>
+        </motion.li>
       </ul>
 
       {/* Mobile Menu Button */}

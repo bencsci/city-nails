@@ -1,6 +1,7 @@
 import React from "react";
 import Banner from "../assets/servicesBanner.jpg";
 import { Link } from "react-router";
+import { motion } from "motion/react";
 
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -94,16 +95,69 @@ const services = [
 const ServicesMain = () => {
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
-      <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-[#8A192C] mb-8">
+      <motion.h1
+        className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-[#8A192C] mb-8"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 1, // Faster duration
+          ease: "easeInOut", // Bouncy effect with easeInOut
+          bounce: 0.5, // Adds more bounce
+          stiffness: 50, // Controls the bounce intensity
+          delay: 0.5,
+        }}
+      >
         ✨ Our Services ✨
-      </h1>
-      <img src={Banner} className="mt-10 w-full rounded-lg shadow-lg" />
-      <div className="border-t-2 border-[#8A192C] my-4"></div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+      </motion.h1>
+      <motion.img
+        src={Banner}
+        className="mt-10 w-full rounded-lg shadow-lg"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 1, // Faster duration
+          ease: "easeInOut", // Bouncy effect with easeInOut
+          bounce: 0.5, // Adds more bounce
+          stiffness: 50, // Controls the bounce intensity
+          delay: 0.65,
+        }}
+      />
+      <motion.div
+        className="border-t-2 border-[#8A192C] my-4"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 1, // Faster duration
+          ease: "easeInOut", // Bouncy effect with easeInOut
+          bounce: 0.5, // Adds more bounce
+          stiffness: 50, // Controls the bounce intensity
+          delay: 0.65,
+        }}
+      ></motion.div>
+
+      {/* Services Grid */}
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{
+          duration: 0.5,
+          ease: "easeInOut",
+          delay: 0.75,
+        }}
+        viewport={{ once: true }}
+      >
         {services.map((service, index) => (
-          <div
+          <motion.div
             key={index}
             className="bg-white p-6 shadow-lg rounded-lg hover:shadow-xl transition duration-300"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{
+              duration: 1.25,
+              ease: "easeInOut",
+            }}
+            viewport={{ once: true }}
           >
             <h3 className="text-xl font-semibold text-[#8A192C]">
               {service.name}
@@ -113,12 +167,21 @@ const ServicesMain = () => {
               {service.details ? service.details : ""}
             </p>
             <p className="text-sm text-gray-600 mt-2">{service.description}</p>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       {/* Book an Appointment Section */}
-      <div className="mt-12 text-center">
+      <motion.div
+        className="mt-12 text-center"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{
+          duration: 0.5,
+          ease: "easeInOut",
+        }}
+        viewport={{ once: true }}
+      >
         <h2 className="text-2xl md:text-3xl font-bold text-[#8A192C] mb-4">
           Ready to pamper yourself?
         </h2>
@@ -134,7 +197,7 @@ const ServicesMain = () => {
             Book an Appointment
           </button>
         </Link>
-      </div>
+      </motion.div>
     </div>
   );
 };
