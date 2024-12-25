@@ -10,7 +10,7 @@ const Info = () => {
           src={Temp}
           alt="Nail Salon"
         />
-        <div className="flex flex-col justify-center md:px-6 font-serif">
+        <div className="flex flex-col justify-center md:px-6">
           <h1 className="lg:text-4xl md:text-3xl sm:text-3xl text-2xl font-bold py-2">
             PROFESSIONAL NAIL CARE
           </h1>
