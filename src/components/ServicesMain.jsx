@@ -192,7 +192,7 @@ const ServicesMain = () => {
         <Link to="/book">
           <button
             onClick={scrollToTop}
-            className="border-2 border-[#8A192C] text-[#8A192C] font-bold py-2 px-6 border-double hover:bg-[#8A192C] hover:text-white transition duration-300"
+            className="border-2 border-[#8A192C] text-[#8A192C] font-bold py-2 px-6 hover:bg-[#8A192C] hover:text-white transition duration-300"
           >
             Book an Appointment
           </button>
