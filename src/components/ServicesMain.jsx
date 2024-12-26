@@ -156,7 +156,7 @@ const ServicesMain = () => {
             transition={{
               duration: 0.5,
               ease: "easeInOut",
-              delay: 0.5,
+              delay: 0.25,
             }}
             viewport={{ once: true }}
           >
@@ -180,7 +180,7 @@ const ServicesMain = () => {
         transition={{
           duration: 0.5,
           ease: "easeInOut",
-          delay: 0.75,
+          delay: 0.5,
         }}
         viewport={{ once: true }}
       >
