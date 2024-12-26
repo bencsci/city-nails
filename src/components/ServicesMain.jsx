@@ -4,7 +4,7 @@ import { Link } from "react-router";
 import { motion } from "motion/react";
 
 const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.scrollTo(0, 0);
 };
 
 const services = [
@@ -154,7 +154,7 @@ const ServicesMain = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{
-              duration: 1.25,
+              duration: 1,
               ease: "easeInOut",
             }}
             viewport={{ once: true }}

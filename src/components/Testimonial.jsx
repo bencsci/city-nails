@@ -37,6 +37,7 @@ const Testimonial = () => {
               delay: index * 0.2, // Delay each card slightly for sequential animation
               ease: "easeInOut",
             }}
+            viewport={{ once: true }}
           >
             {/* Card content (text) */}
             <motion.p
@@ -48,6 +49,7 @@ const Testimonial = () => {
                 delay: 0.3, // Text fades in after the card with some delay
                 ease: "easeInOut",
               }}
+              viewport={{ once: true }}
             >
               "{testimonial.text}"
             </motion.p>
@@ -60,6 +62,7 @@ const Testimonial = () => {
                 delay: 0.5, // Name fades in after the text
                 ease: "easeInOut",
               }}
+              viewport={{ once: true }}
             >
               - {testimonial.name}
             </motion.h3>
