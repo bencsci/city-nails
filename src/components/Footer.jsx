@@ -72,7 +72,9 @@ const Footer = () => {
           }}
           viewport={{ once: true }} // Ensures animation happens once
         >
-          <h3 className="text-lg font-bold mb-4 uppercase">Quick Links</h3>
+          <h3 className="pt-8 md:pt-0  text-lg font-bold mb-4 uppercase">
+            Quick Links
+          </h3>
           <ul className="font-bold">
             <li className="p-1 hover:text-[#8A192C] cursor-pointer">
               <NavLink to="/" onClick={scrollToTop}>

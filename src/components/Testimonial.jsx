@@ -29,7 +29,7 @@ const Testimonial = () => {
         {testimonials.map((testimonial, index) => (
           <motion.div
             key={testimonial.id}
-            className="bg-white p-6 shadow-lg rounded-lg text-center"
+            className="bg-white p-6 shadow-md rounded-lg text-center mt-8 lg:mt-0"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
