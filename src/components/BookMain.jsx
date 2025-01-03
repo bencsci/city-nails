@@ -14,7 +14,6 @@ const ContactMain = () => {
   return (
     <div className="lg:px-32 lg:py-16 md:px-6 md:py-12">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Left side - Contact info */}
         <div className="md:order-1">
           <div>
             <motion.h1
@@ -22,10 +21,10 @@ const ContactMain = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
-                duration: 1, // Faster duration
-                ease: "easeInOut", // Bouncy effect with easeInOut
-                bounce: 0.5, // Adds more bounce
-                stiffness: 50, // Controls the bounce intensity
+                duration: 1, 
+                ease: "easeInOut", 
+                bounce: 0.5,
+                stiffness: 50,
               }}
             >
               Book Now <span className="animate-bounce inline-block">📩</span>
@@ -35,8 +34,8 @@ const ContactMain = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{
-                duration: 1, // Faster duration
-                ease: "easeInOut", // Bouncy effect with easeInOut
+                duration: 1, 
+                ease: "easeInOut", 
                 delay: 0.5,
               }}
             >
@@ -73,7 +72,6 @@ const ContactMain = () => {
                 </p>
               </div>
 
-              {/* New Section: Payment Info */}
               <div className="my-6 text-red-600">
                 <p className="font-semibold">
                   Please note: We only accept cash, no debit or credit cards. 💵

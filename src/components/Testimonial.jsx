@@ -34,7 +34,7 @@ const Testimonial = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
               duration: 1,
-              delay: index * 0.2, // Delay each card slightly for sequential animation
+              delay: index * 0.2, 
               ease: "easeInOut",
             }}
             viewport={{ once: true }}
@@ -46,7 +46,7 @@ const Testimonial = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{
                 duration: 0.8,
-                delay: 0.3, // Text fades in after the card with some delay
+                delay: 0.3, 
                 ease: "easeInOut",
               }}
               viewport={{ once: true }}
@@ -59,7 +59,7 @@ const Testimonial = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{
                 duration: 1,
-                delay: 0.5, // Name fades in after the text
+                delay: 0.5,
                 ease: "easeInOut",
               }}
               viewport={{ once: true }}

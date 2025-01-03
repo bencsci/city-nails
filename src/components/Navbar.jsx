@@ -12,16 +12,15 @@ const Navbar = () => {
 
   return (
     <div className="flex justify-between items-center h-20 max-w-[1640px] mx-auto px-4 text-black">
-      {/* Motion component for desktop navbar text */}
       <motion.h1
         className="w-full text-3xl font-bold text-[#8A192C]"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
-          duration: 1, // Faster duration
-          ease: "easeInOut", // Bouncy effect with easeInOut
-          bounce: 0.5, // Adds more bounce
-          stiffness: 50, // Controls the bounce intensity
+          duration: 1, 
+          ease: "easeInOut",
+          bounce: 0.5,
+          stiffness: 50, 
         }}
       >
         <Link to="/">CITY NAILS</Link>

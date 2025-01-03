@@ -14,10 +14,10 @@ const Footer = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{
-          duration: 0.5, // Faster animation for entire column
+          duration: 0.5, 
           ease: "easeInOut",
         }}
-        viewport={{ once: true }} // Ensures animation happens once
+        viewport={{ once: true }}
       >
         {/* Contact Us Column */}
         <motion.div
@@ -30,7 +30,7 @@ const Footer = () => {
             bounce: 0.5,
             stiffness: 50,
           }}
-          viewport={{ once: true }} // Ensures animation happens once
+          viewport={{ once: true }} 
         >
           <h3 className="text-lg font-bold mb-4 uppercase">Contact Us</h3>
           <ul>
@@ -60,7 +60,6 @@ const Footer = () => {
           </ul>
         </motion.div>
 
-        {/* Quick Links Column */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -70,7 +69,7 @@ const Footer = () => {
             bounce: 0.5,
             stiffness: 50,
           }}
-          viewport={{ once: true }} // Ensures animation happens once
+          viewport={{ once: true }} 
         >
           <h3 className="pt-8 md:pt-0  text-lg font-bold mb-4 uppercase">
             Quick Links
@@ -111,7 +110,7 @@ const Footer = () => {
           bounce: 0.5,
           stiffness: 50,
         }}
-        viewport={{ once: true }} // Ensures animation happens once
+        viewport={{ once: true }}
       >
         <p className="text-sm text-gray-600">
           &copy; {new Date().getFullYear()} City Nails

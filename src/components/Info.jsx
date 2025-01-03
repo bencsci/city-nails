@@ -11,7 +11,6 @@ const Info = () => {
   return (
     <div className="w-full bg-white lg:py-32 md:py-28 sm:py-12 px-4 pb-12">
       <div className="max-w-[1240px] mx-auto grid md:grid-cols-2 gap-8">
-        {/* Motion component for the image */}
         <motion.img
           className="w-full mx-auto my-4 rounded-md shadow-xl object-cover"
           src={Temp}
@@ -24,11 +23,10 @@ const Info = () => {
             bounce: 0.5,
             stiffness: 50,
           }}
-          viewport={{ once: true }} // Ensures animation happens once
+          viewport={{ once: true }} 
         />
 
         <div className="flex flex-col justify-center md:px-6">
-          {/* Motion component for the heading */}
           <motion.h1
             className="lg:text-4xl md:text-3xl sm:text-3xl text-2xl font-bold text-[#333] py-2"
             initial={{ opacity: 0, y: 20 }}
@@ -39,12 +37,11 @@ const Info = () => {
               bounce: 0.5,
               stiffness: 50,
             }}
-            viewport={{ once: true }} // Ensures animation happens once
+            viewport={{ once: true }}
           >
             DISCOVER THE CITY NAILS EXPERIENCE
           </motion.h1>
 
-          {/* Motion component for the paragraph */}
           <motion.p
             className="text-lg text-[#555] mb-6"
             initial={{ opacity: 0, y: 20 }}
@@ -55,7 +52,7 @@ const Info = () => {
               bounce: 0.5,
               stiffness: 50,
             }}
-            viewport={{ once: true }} // Ensures animation happens once
+            viewport={{ once: true }} 
           >
             At City Nails, we take pride in offering a luxurious, relaxing
             environment where beauty meets precision. From custom nail art to
@@ -63,7 +60,6 @@ const Info = () => {
             is crafted to perfection. Let us make your next visit unforgettable.
           </motion.p>
 
-          {/* Motion component for the button */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -73,7 +69,7 @@ const Info = () => {
               bounce: 0.5,
               stiffness: 50,
             }}
-            viewport={{ once: true }} // Ensures animation happens once
+            viewport={{ once: true }} 
           >
             <Link to="/about" className="flex justify-center">
               <button

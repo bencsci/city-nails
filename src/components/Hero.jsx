@@ -18,15 +18,14 @@ const Hero = () => {
         />
         <div className="absolute inset-0 bg-white opacity-50"></div>
         <div className="absolute inset-0 flex flex-col items-center justify-center z-10 text-center">
-          {/* Motion component for the text */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
-              duration: 1, // Faster duration
-              ease: "easeInOut", // Bouncy effect with easeInOut
-              bounce: 0.5, // Adds more bounce
-              stiffness: 50, // Controls the bounce intensity
+              duration: 1,
+              ease: "easeInOut", 
+              bounce: 0.5,
+              stiffness: 50,
               delay: 0.75,
             }}
             className="text-2xl md:text-3xl lg:text-5xl 2xl:p-20 md:p-15 sm:p-5 text-black font-serif"
@@ -35,15 +34,14 @@ const Hero = () => {
             Perfect Your Nails.
           </motion.p>
 
-          {/* Motion component for the button */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
-              duration: 1.5, // Faster duration
-              ease: "easeInOut", // Bouncy effect with easeInOut
-              bounce: 0.5, // Adds more bounce
-              stiffness: 50, // Controls the bounce intensity
+              duration: 1.5,
+              ease: "easeInOut",
+              bounce: 0.5, 
+              stiffness: 50, 
               delay: 0.75,
             }}
           >

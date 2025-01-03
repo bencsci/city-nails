@@ -15,17 +15,17 @@ const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1600 },
     items: 3,
-    slidesToSlide: 1, // optional, default to 1.
+    slidesToSlide: 1, 
   },
   tablet: {
     breakpoint: { max: 1500, min: 600 },
     items: 2,
-    slidesToSlide: 1, // optional, default to 1.
+    slidesToSlide: 1,
   },
   mobile: {
     breakpoint: { max: 600, min: 0 },
     items: 1,
-    slidesToSlide: 1, // optional, default to 1.
+    slidesToSlide: 1, 
   },
 };
 
@@ -52,10 +52,10 @@ const CarouselComponent = ({ deviceType }) => (
         draggable={false}
         showDots={true}
         responsive={responsive}
-        ssr={true} // means to render carousel on server-side.
+        ssr={true} 
         infinite={true}
         autoPlay={deviceType !== "mobile"}
-        autoPlaySpeed={1000}
+        autoPlaySpeed={2000}
         keyBoardControl={true}
         customTransition="all .5"
         transitionDuration={500}
