@@ -100,10 +100,10 @@ const ServicesMain = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
-          duration: 1, 
-          ease: "easeInOut", 
-          bounce: 0.5, 
-          stiffness: 50, 
+          duration: 1,
+          ease: "easeInOut",
+          bounce: 0.5,
+          stiffness: 50,
           delay: 0.5,
         }}
       >
@@ -115,10 +115,10 @@ const ServicesMain = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
-          duration: 1, 
-          ease: "easeInOut", 
-          bounce: 0.5, 
-          stiffness: 50, 
+          duration: 1,
+          ease: "easeInOut",
+          bounce: 0.5,
+          stiffness: 50,
           delay: 0.65,
         }}
       />
@@ -127,10 +127,10 @@ const ServicesMain = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
-          duration: 1, 
-          ease: "easeInOut", 
-          bounce: 0.5, 
-          stiffness: 50, 
+          duration: 1,
+          ease: "easeInOut",
+          bounce: 0.5,
+          stiffness: 50,
           delay: 0.65,
         }}
       ></motion.div>
@@ -150,7 +150,7 @@ const ServicesMain = () => {
         {services.map((service, index) => (
           <motion.div
             key={index}
-            className="bg-white p-6 shadow-lg rounded-lg hover:shadow-xl transition duration-300"
+            className="bg-white p-6 shadow-lg rounded-lg"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{
