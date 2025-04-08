@@ -1,174 +1,151 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { NavLink, Link } from "react-router";
 import { motion } from "motion/react";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+
+    document.addEventListener("scroll", handleScroll);
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrolled]);
 
   const handleNav = () => {
     setNav(!nav);
   };
 
   return (
-    <div className="flex justify-between items-center h-20 max-w-[1640px] mx-auto px-4 text-black">
-      <motion.h1
-        className="w-full text-3xl font-bold text-[#8A192C]"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 1, 
-          ease: "easeInOut",
-          bounce: 0.5,
-          stiffness: 50, 
-        }}
-      >
-        <Link to="/">CITY NAILS</Link>
-      </motion.h1>
-
-      {/* Desktop Menu */}
-      <ul className="hidden md:flex">
-        <motion.li
-          className="p-4 font-semibold hover:text-[#8A192C]"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 1,
-            ease: "easeInOut",
-            bounce: 0.5,
-            stiffness: 50,
-          }}
+    <motion.header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? "bg-white shadow-md py-3" : "bg-transparent py-5"
+      }`}
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+    >
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
         >
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              isActive ? "text-[#8A192C] border-b-2 border-[#8A192C]" : ""
-            }
-          >
-            Home
-          </NavLink>
-        </motion.li>
+          <Link to="/" className="flex items-center">
+            <h1 className="text-2xl sm:text-3xl font-serif text-[#8A192C]">
+              CITY NAILS
+            </h1>
+          </Link>
+        </motion.div>
 
-        <motion.li
-          className="p-4 font-semibold hover:text-[#8A192C]"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 1,
-            ease: "easeInOut",
-            bounce: 0.5,
-            stiffness: 50,
-          }}
-        >
-          <NavLink
-            to="/services"
-            className={({ isActive }) =>
-              isActive ? "text-[#8A192C] border-b-2 border-[#8A192C]" : ""
-            }
-          >
-            Services
-          </NavLink>
-        </motion.li>
+        {/* Desktop Menu */}
+        <nav className="hidden md:flex items-center space-x-1">
+          {["Home", "Services", "About"].map((item, i) => (
+            <motion.div
+              key={item}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: i * 0.1 }}
+            >
+              <NavLink
+                to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                className={({ isActive }) =>
+                  `px-4 py-2 mx-1 text-sm tracking-wide uppercase font-medium transition-colors duration-300 ${
+                    isActive
+                      ? "text-[#8A192C] border-b-2 border-[#8A192C]"
+                      : "text-[#333] hover:text-[#8A192C]"
+                  }`
+                }
+              >
+                {item}
+              </NavLink>
+            </motion.div>
+          ))}
 
-        <motion.li
-          className="p-4 font-semibold hover:text-[#8A192C]"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 1,
-            ease: "easeInOut",
-            bounce: 0.5,
-            stiffness: 50,
-          }}
-        >
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              isActive ? "text-[#8A192C] border-b-2 border-[#8A192C]" : ""
-            }
+          {/* Book button */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3, delay: 0.4 }}
           >
-            About
-          </NavLink>
-        </motion.li>
+            <Link to="/book">
+              <button className="ml-4 px-5 py-2 bg-[#8A192C] text-white rounded-sm text-sm uppercase tracking-wide font-medium hover:bg-[#9E2A3C] transition-colors duration-300 shadow-sm hover:shadow">
+                Book Now
+              </button>
+            </Link>
+          </motion.div>
+        </nav>
 
-        <motion.li
-          className="p-4 font-semibold hover:text-[#8A192C]"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 1,
-            ease: "easeInOut",
-            bounce: 0.5,
-            stiffness: 50,
-          }}
-        >
-          <NavLink
-            to="/book"
-            className={({ isActive }) =>
-              isActive ? "text-[#8A192C] border-b-2 border-[#8A192C]" : ""
-            }
-          >
-            Book
-          </NavLink>
-        </motion.li>
-      </ul>
-
-      {/* Mobile Menu Button */}
-      <div onClick={handleNav} className="block md:hidden">
-        {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
+        {/* Mobile Menu Button */}
+        <div onClick={handleNav} className="block md:hidden">
+          <button className="p-2 rounded-full hover:bg-gray-100/80 transition-colors">
+            {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
-      <div
-        className={
-          nav
-            ? "z-50 fixed left-0 top-0 w-[60%] border-r h-full border-r-white-500 bg-[#ffffff] ease-in-out duration-500"
-            : "fixed left-[-100%] ease-out duration-100"
-        }
+      <motion.div
+        className={`fixed inset-0 bg-black/50 z-50 ${nav ? "block" : "hidden"}`}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: nav ? 1 : 0 }}
+        onClick={() => setNav(false)}
       >
-        <h1 className="w-full text-3xl font-bold text-[#8A192C] m-4">
-          CITY NAILS
-        </h1>
-        <ul className="p-4 uppercase">
-          <li className="p-4 border-b border-x-gray-800 font-semibold hover:text-[#8A192C]">
-            <NavLink
-              to="/"
+        <motion.div
+          className="fixed right-0 top-0 h-full w-[280px] bg-white shadow-xl p-6 overflow-y-auto"
+          initial={{ x: "100%" }}
+          animate={{ x: nav ? 0 : "100%" }}
+          transition={{ type: "tween", duration: 0.3 }}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="flex justify-between items-center mb-8">
+            <h2 className="text-2xl font-serif text-[#8A192C]">CITY NAILS</h2>
+            <button
               onClick={handleNav}
-              className={({ isActive }) => (isActive ? "text-[#8A192C]" : "")}
+              className="p-2 rounded-full hover:bg-gray-100 transition-colors"
             >
-              Home
-            </NavLink>
-          </li>
-          <li className="p-4 border-b border-x-gray-800 font-semibold hover:text-[#8A192C]">
-            <NavLink
-              to="/services"
-              onClick={handleNav}
-              className={({ isActive }) => (isActive ? "text-[#8A192C]" : "")}
-            >
-              Services
-            </NavLink>
-          </li>
-          <li className="p-4 border-b border-x-gray-800 font-semibold hover:text-[#8A192C]">
-            <NavLink
-              to="/about"
-              onClick={handleNav}
-              className={({ isActive }) => (isActive ? "text-[#8A192C]" : "")}
-            >
-              About
-            </NavLink>
-          </li>
-          <li className="p-4 border-b border-x-gray-800 font-semibold hover:text-[#8A192C]">
-            <NavLink
+              <AiOutlineClose size={20} />
+            </button>
+          </div>
+
+          <nav className="flex flex-col space-y-1">
+            {["Home", "Services", "About"].map((item, i) => (
+              <NavLink
+                key={item}
+                to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                onClick={handleNav}
+                className={({ isActive }) =>
+                  `px-4 py-3 rounded-sm text-base font-medium transition-colors duration-200 ${
+                    isActive
+                      ? "text-[#8A192C] bg-[#8A192C]/5"
+                      : "text-[#333] hover:bg-gray-50"
+                  }`
+                }
+              >
+                {item}
+              </NavLink>
+            ))}
+
+            <Link
               to="/book"
               onClick={handleNav}
-              className={({ isActive }) => (isActive ? "text-[#8A192C]" : "")}
+              className="mt-4 px-4 py-3 bg-[#8A192C] text-white rounded-sm text-center shadow-sm"
             >
-              Book
-            </NavLink>
-          </li>
-        </ul>
-      </div>
-    </div>
+              Book Now
+            </Link>
+          </nav>
+        </motion.div>
+      </motion.div>
+    </motion.header>
   );
 };
 
