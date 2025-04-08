@@ -2,7 +2,7 @@
 
 # City Nails
 
-City Nails is a responsive, website built for a local nail salon to enhance its online presence and client engagement. Designed with performance and accessibility in mind, the site adapts seamlessly across devices and integrates interactive features to support customer needs and business growth.
+City Nails is a responsive website built for a local nail salon to enhance its online presence and client engagement. Designed with performance and accessibility in mind, the site adapts seamlessly across devices and integrates interactive features to support customer needs and business growth.
 
 ## Features
 
