@@ -178,7 +178,7 @@ const CarouselComponent = ({ deviceType }) => (
 
       <div className="text-center mt-8">
         <p className="text-sm md:text-base text-[#555] max-w-2xl mx-auto">
-          Experience our artisanal nail designs created with precision and care.
+          Experience our wonderful nail designs created with precision and care.
           Each design showcases our dedication to quality and artistry.
         </p>
       </div>

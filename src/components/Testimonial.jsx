@@ -66,10 +66,6 @@ const Testimonial = () => {
               }}
               viewport={{ once: true }}
             >
-              {/* Quotation mark */}
-              <div className="absolute -top-4 left-8 text-5xl text-[#8A192C]/10 font-serif">
-                "
-              </div>
 
               {/* Stars */}
               <div className="flex space-x-1 mb-4">

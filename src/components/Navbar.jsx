@@ -7,6 +7,10 @@ const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 10;
@@ -23,6 +27,7 @@ const Navbar = () => {
 
   const handleNav = () => {
     setNav(!nav);
+    scrollToTop();
   };
 
   return (
@@ -40,7 +45,7 @@ const Navbar = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center" onClick={scrollToTop}>
             <h1 className="text-2xl sm:text-3xl font-serif text-[#8A192C]">
               CITY NAILS
             </h1>
@@ -51,6 +56,7 @@ const Navbar = () => {
         <nav className="hidden md:flex items-center space-x-1">
           {["Home", "Services", "About"].map((item, i) => (
             <motion.div
+              onClick={scrollToTop}
               key={item}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -73,6 +79,7 @@ const Navbar = () => {
 
           {/* Book button */}
           <motion.div
+            onClick={scrollToTop}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3, delay: 0.4 }}

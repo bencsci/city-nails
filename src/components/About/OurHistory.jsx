@@ -51,7 +51,7 @@ const OurHistory = () => {
               What began as a small family business has grown into a beloved
               establishment where clients return time and again for quality
               services and warm atmosphere. Hung and Be have built a loyal
-              clientele who appreciate their dedication to excellence and
+              clients who appreciate their dedication to excellence and
               personalized attention to every detail.
             </p>
 

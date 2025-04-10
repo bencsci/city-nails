@@ -28,11 +28,14 @@ const AboutSalon = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          About <span className="text-[#8A192C]">City Nails</span>
+          About{" "}
+          <span className="text-[#8A192C]">
+            City Nails
+          </span>
         </motion.h1>
 
         <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
-          {/* Image for mobile - shown at top on small screens */}
+          {/* Image for mobile */}
           <motion.div
             className="relative block md:hidden mb-6 mx-auto max-w-sm"
             initial={{ opacity: 0, y: 20 }}
@@ -73,8 +76,8 @@ const AboutSalon = () => {
             <p className="text-sm md:text-base text-[#666] mb-6 md:mb-8 leading-relaxed">
               We are committed to using only the highest-quality products to
               ensure beautiful, long-lasting results. Our goal is to provide
-              each client with the best experience possible—relaxing, enjoyable,
-              and tailored to your unique needs.
+              each client with the best experience possible. Relaxing,
+              enjoyable, and tailored to your unique needs.
             </p>
 
             <ul className="space-y-2 md:space-y-3 mb-1">
@@ -99,7 +102,7 @@ const AboutSalon = () => {
             </ul>
           </motion.div>
 
-          {/* Right side - Image with styled container (hidden on mobile) */}
+          {/* Right side */}
           <motion.div
             className="relative hidden md:block"
             initial={{ opacity: 0, x: 20 }}
