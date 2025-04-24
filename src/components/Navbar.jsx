@@ -8,7 +8,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo(0, 0);
   };
 
   useEffect(() => {
@@ -27,7 +27,6 @@ const Navbar = () => {
 
   const handleNav = () => {
     setNav(!nav);
-    scrollToTop();
   };
 
   return (
@@ -71,6 +70,7 @@ const Navbar = () => {
                       : "text-[#333] hover:text-[#8A192C]"
                   }`
                 }
+                onClick={scrollToTop}
               >
                 {item}
               </NavLink>
@@ -129,7 +129,10 @@ const Navbar = () => {
               <NavLink
                 key={item}
                 to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                onClick={handleNav}
+                onClick={() => {
+                  handleNav();
+                  scrollToTop();
+                }}
                 className={({ isActive }) =>
                   `px-4 py-3 rounded-sm text-base font-medium transition-colors duration-200 ${
                     isActive
@@ -144,7 +147,10 @@ const Navbar = () => {
 
             <Link
               to="/book"
-              onClick={handleNav}
+              onClick={() => {
+                handleNav();
+                scrollToTop();
+              }}
               className="mt-4 px-4 py-3 bg-[#8A192C] text-white rounded-sm text-center shadow-sm"
             >
               Book Now

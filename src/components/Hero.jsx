@@ -4,7 +4,7 @@ import { Link } from "react-router";
 import { motion } from "motion/react";
 
 const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.scrollTo(0, 0);
 };
 
 const Hero = () => {
