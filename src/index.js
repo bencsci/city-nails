@@ -8,6 +8,7 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { Analytics } from "@vercel/analytics/react";
 
 const root = document.getElementById("root");
 
@@ -21,5 +22,6 @@ ReactDOM.createRoot(root).render(
       <Route path="/services" element={<Services />} />
     </Routes>
     <Footer />
+    <Analytics />
   </BrowserRouter>
 );
