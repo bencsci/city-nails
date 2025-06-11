@@ -50,7 +50,7 @@ const Hero = () => {
             transition={{ duration: 1, delay: 0.6 }}
             className="text-lg md:text-xl text-[#555] mb-8 max-w-xl mx-auto font-light"
           >
-            Experience premium nail care in a relaxing and luxurious
+            Experience premium nail care in a relaxing and soothing
             environment.
           </motion.p>
 

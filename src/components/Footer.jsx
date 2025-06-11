@@ -4,7 +4,6 @@ import { motion } from "motion/react";
 import {
   FiMapPin,
   FiPhone,
-  FiMail,
   FiClock,
   FiInstagram,
   FiFacebook,
@@ -72,20 +71,6 @@ const Footer = () => {
                     className="block text-sm text-[#555] hover:text-[#8A192C] transition-colors"
                   >
                     (902) 270-3665
-                  </a>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <FiMail className="text-[#8A192C] mt-1 mr-3" />
-                <div>
-                  <span className="block text-sm font-medium text-[#333]">
-                    Email
-                  </span>
-                  <a
-                    href="mailto:contact.citynails@gmail.com"
-                    className="block text-sm text-[#555] hover:text-[#8A192C] transition-colors"
-                  >
-                    contact.citynails@gmail.com
                   </a>
                 </div>
               </li>

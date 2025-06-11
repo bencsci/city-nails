@@ -62,7 +62,7 @@ const Info = () => {
               <div className="w-16 h-1 bg-[#8A192C] mb-6"></div>
 
               <p className="text-lg text-[#555] mb-8 leading-relaxed font-light">
-                At City Nails, we take pride in offering a luxurious, relaxing
+                At City Nails, we take pride in offering a cozy, relaxing
                 environment where beauty meets precision. From custom nail art
                 to high-quality manicures, our professional team ensures every
                 service is crafted to perfection. Let us make your next visit

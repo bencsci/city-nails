@@ -6,13 +6,7 @@ import {
   Pin,
 } from "@vis.gl/react-google-maps";
 import { motion } from "motion/react";
-import {
-  FiMapPin,
-  FiPhone,
-  FiMail,
-  FiClock,
-  FiDollarSign,
-} from "react-icons/fi";
+import { FiMapPin, FiPhone, FiClock, FiDollarSign } from "react-icons/fi";
 
 const API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 const MAP_ID = process.env.REACT_APP_MAP_ID;
@@ -109,29 +103,6 @@ const ContactMain = () => {
                 viewport={{ once: true }}
               >
                 <div className="mt-1 mr-5 p-2 bg-[#8A192C]/5 rounded-full">
-                  <FiMail className="text-[#8A192C] w-5 h-5" />
-                </div>
-                <div>
-                  <h5 className="font-medium text-[#333] mb-1">Email</h5>
-                  <p className="text-[#555]">
-                    <a
-                      href="mailto:contact.citynails@gmail.com"
-                      className="hover:text-[#8A192C] transition-colors"
-                    >
-                      contact.citynails@gmail.com
-                    </a>
-                  </p>
-                </div>
-              </motion.div>
-
-              <motion.div
-                className="flex items-start"
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.4 }}
-                viewport={{ once: true }}
-              >
-                <div className="mt-1 mr-5 p-2 bg-[#8A192C]/5 rounded-full">
                   <FiClock className="text-[#8A192C] w-5 h-5" />
                 </div>
                 <div>
@@ -149,7 +120,7 @@ const ContactMain = () => {
                 className="flex items-start"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.5 }}
+                transition={{ duration: 0.4, delay: 0.4 }}
                 viewport={{ once: true }}
               >
                 <div className="mt-1 mr-5 p-2 bg-[#8A192C]/5 rounded-full">
@@ -168,7 +139,7 @@ const ContactMain = () => {
 
             <div className="border-t border-gray-100 pt-6">
               <p className="text-[#555] italic">
-                Visit us today and let our expert technicians pamper you with
+                Visit us today and let our expert technicians treat you with
                 the exceptional nail care you deserve.
               </p>
             </div>
@@ -191,7 +162,7 @@ const ContactMain = () => {
                   }}
                   defaultCenter={{ lat: 46.20906, lng: -60.24881 }}
                   defaultZoom={16}
-                  gestureHandling={"greedy"}
+                  gestureHandling={"cooperative"}
                   mapId={MAP_ID}
                   streetViewControl={false}
                   mapTypeControl={false}
