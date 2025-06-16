@@ -109,9 +109,8 @@ const ContactMain = () => {
                   <h5 className="font-medium text-[#333] mb-1">
                     Business Hours
                   </h5>
-                  <p className="text-[#555]">
-                    Monday - Saturday: 9:00 AM - 6:00 PM
-                  </p>
+                  <p className="text-[#555]">Friday: 9:30 AM - 7:00 PM</p>
+                  <p className="text-[#555]">Saturday: 9:30 AM - 6:00 PM</p>
                   <p className="text-[#555]">Sunday: Closed</p>
                 </div>
               </motion.div>
@@ -139,8 +138,8 @@ const ContactMain = () => {
 
             <div className="border-t border-gray-100 pt-6">
               <p className="text-[#555] italic">
-                Visit us today and let our expert technicians treat you with
-                the exceptional nail care you deserve.
+                Visit us today and let our expert technicians treat you with the
+                exceptional nail care you deserve.
               </p>
             </div>
           </motion.div>

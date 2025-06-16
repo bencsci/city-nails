@@ -56,7 +56,9 @@ const Footer = () => {
                     Hours
                   </span>
                   <span className="block text-sm text-[#555]">
-                    Mon - Sat: 9AM-6PM
+                    Mon - Fri: 9:30AM-7PM
+                    <br />
+                    Sat: 9:30AM-6PM
                   </span>
                 </div>
               </li>
@@ -129,12 +131,12 @@ const Footer = () => {
             </h3>
             <ul className="space-y-2">
               {[
-                { day: "Monday", hours: "9:00 AM - 6:00 PM" },
-                { day: "Tuesday", hours: "9:00 AM - 6:00 PM" },
-                { day: "Wednesday", hours: "9:00 AM - 6:00 PM" },
-                { day: "Thursday", hours: "9:00 AM - 6:00 PM" },
-                { day: "Friday", hours: "9:00 AM - 6:00 PM" },
-                { day: "Saturday", hours: "9:00 AM - 6:00 PM" },
+                { day: "Monday", hours: "9:30 AM - 7:00 PM" },
+                { day: "Tuesday", hours: "9:30 AM - 7:00 PM" },
+                { day: "Wednesday", hours: "9:30 AM - 7:00 PM" },
+                { day: "Thursday", hours: "9:30 AM - 7:00 PM" },
+                { day: "Friday", hours: "9:30 AM - 7:00 PM" },
+                { day: "Saturday", hours: "9:30 AM - 6:00 PM" },
                 { day: "Sunday", hours: "Closed" },
               ].map((item) => (
                 <li key={item.day} className="flex justify-between text-sm">
